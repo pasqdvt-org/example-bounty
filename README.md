@@ -10,7 +10,7 @@
 1. with the first user (owner) invite the second user to the repository and give it the write permission
 1. with the second user accept the invitation to collaborate to the forked repository
 1. with the second user clone the forked repository on your machine
-1. with the second user create a PAT token with repository permission (all checked)
+1. with the second user create a PAT token with ```read:org, repo, user permissions```
 1. if needed, install terraform on your machine
 1. open a cli and go to ```src``` directory
 1. change the line 19 with your organization name
