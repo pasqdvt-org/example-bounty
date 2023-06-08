@@ -1,1 +1,1 @@
-# example-bounty
+# example-secrets-menagement-bounty
