@@ -16,8 +16,8 @@ variable "github" {
   })
   description = "GitHub Organization and repository name"
   default = {
-    org        = "pasqdvt-org"
-    repository = "example-bounty"
+    org        = "pasqdvt-org" # CHANGE ME WITH YOUR ORG
+    repository = "example-secrets-menagement-bounty"
   }
 }
 
@@ -33,10 +33,6 @@ provider "github" {
   read_delay_ms  = "200"
 }
 
-data "github_user" "current" {
-  username = "pasqualedevita"
-}
-
 # CASE 1) manage secrets (create/update)
 resource "github_actions_secret" "repository_secret" {
   repository      = var.github.repository
@@ -45,9 +41,9 @@ resource "github_actions_secret" "repository_secret" {
 }
 
 # CASE 2) manage environment secrets (create/update)
-resource "github_actions_environment_secret" "repository_secret_environment" {
-  repository      = var.github.repository
-  environment     = "environment"
-  secret_name     = "REPOSITORY_ENVIRONMENT_SECRET_KEY"
-  plaintext_value = "REPOSITORY_ENVIRONMENT_SUPER_SECRET_VALUE"
-}
+# resource "github_actions_environment_secret" "repository_secret_environment" {
+#   repository      = var.github.repository
+#   environment     = "environment"
+#   secret_name     = "REPOSITORY_ENVIRONMENT_SECRET_KEY"
+#   plaintext_value = "REPOSITORY_ENVIRONMENT_SUPER_SECRET_VALUE"
+# }
